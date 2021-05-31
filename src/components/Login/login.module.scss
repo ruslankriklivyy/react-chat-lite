@@ -1,0 +1,44 @@
+.login {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  h2 {
+    font-size: 34px;
+    margin-bottom: 40px;
+  }
+  button {
+    font-family: 'VT323', monospace;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    font-size: 24px;
+    width: 40%;
+    height: 60px;
+    background: transparent;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s ease;
+    color: #47ffb0;
+    &:hover {
+      background: #28533a;
+      color: #181818;
+    }
+    &:active {
+      background: rgb(223, 218, 218);
+    }
+  }
+  img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+}
