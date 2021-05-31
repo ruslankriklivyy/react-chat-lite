@@ -147,6 +147,34 @@ body {
   background-color: #181818;
 }
 
+html,
+body {
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  ::-webkit-scrollbar-button {
+    // background-color: #666;
+  }
+  ::-webkit-scrollbar-track {
+    background-color: #999;
+  }
+  ::-webkit-scrollbar-track-piece {
+    background-color: #47ffb0ff;
+  }
+  ::-webkit-scrollbar-thumb {
+    height: 50px;
+    background-color: #28533a;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-corner {
+    background-color: #28533a;
+  }
+  ::-webkit-resizer {
+    background-color: #666;
+  }
+}
+
 .box-terminal {
   background-image: url('./assets/img/terminalBodyPage.png');
   background-position: center;

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useRef, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 import firebase from 'firebase';
@@ -13,6 +13,7 @@ const Chat = () => {
     firestore.collection('messages').orderBy('createdAt'),
   );
   const [value, setValue] = useState('');
+  const chatElem = useRef<HTMLInputElement>(null);
 
   const sendMessage = async () => {
     firestore.collection('messages').add({
@@ -22,6 +23,7 @@ const Chat = () => {
       text: value,
       createdAt: firebase.firestore.FieldValue.serverTimestamp(),
     });
+    chatElem.current?.scrollTo(0, chatElem.current.scrollHeight);
     setValue('');
   };
 
@@ -32,7 +34,7 @@ const Chat = () => {
   return (
     <div className="box">
       <div className={styles.chat}>
-        <div className={styles.chatMessages}>
+        <div className={styles.chatMessages} ref={chatElem}>
           {messages?.map((message) => (
             <div
               className={
